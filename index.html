@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Parks - IPDC</title>
+  <style>
+      :root {
+      --dark-green: #0d3b2e;
+      --mid-green: #14523f;
+      --accent-green: #1f7a5a;
+      --light-green: #e6f2ec;
+      --gold: #c9a227;
+      --text-light: #eaf5ef;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f4faf6;
+      color: #1c1c1c;
+      line-height: 1.6;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--dark-green);
+      color: white;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    header .logo {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    header .logo span { color: var(--gold); }
+
+    nav a {
+      color: var(--text-light);
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--gold); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--dark-green), var(--accent-green));
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .hero p {
+      font-size: 18px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ===== BREADCRUMB ===== */
+    .breadcrumb {
+      background: var(--light-green);
+      padding: 12px 40px;
+      font-size: 14px;
+      color: var(--mid-green);
+    }
+    .breadcrumb a {
+      color: var(--mid-green);
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ===== FILTER TABS ===== */
+    .filters {
+      text-align: center;
+      padding: 25px 20px 10px;
+      background: white;
+    }
+    .filters button {
+      background: transparent;
+      border: 2px solid var(--mid-green);
+      color: var(--mid-green);
+      padding: 8px 18px;
+      margin: 5px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .filters button:hover,
+    .filters button.active {
+      background: var(--dark-green);
+      color: white;
+      border-color: var(--dark-green);
+    }
+
+    /* ===== PARKS GRID ===== */
+    .parks-section {
+      padding: 40px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .parks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .park-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(13, 59, 46, 0.12);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-top: 5px solid var(--dark-green);
+    }
+    .park-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(13, 59, 46, 0.28);
+    }
+
+    .park-img {
+      width: 100%;
+      height: 170px;
+      background: linear-gradient(135deg, var(--mid-green), var(--accent-green));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .park-body {
+      padding: 18px;
+      text-align: center;
+    }
+    .park-body h3 {
+      color: var(--dark-green);
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .park-body p {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 14px;
+    }
+    .park-body .btn {
+      display: inline-block;
+      background: var(--dark-green);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    .park-body .btn:hover {
+      background: var(--accent-green);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark-green);
+      color: var(--text-light);
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      header { flex-direction: column; gap: 10px; }
+      nav a { margin: 0 8px; font-size: 13px; }
+      .parks-section { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">IPDC <span>| Industrial Parks</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="parks.html">Parks</a>
+      <a href="services.html">Services</a>
+      <a href="news.html">News</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Industrial Parks</h1>
+    <p>Striving for Eco-Industrial Parks — driving Ethiopia's industrial transformation across the nation.</p>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> &nbsp;›&nbsp; <strong>Parks</strong>
+  </div>
+
+  <!-- FILTER TABS -->
+  <div class="filters">
+    <button class="active">All</button>
+    <button>Apparel &amp; Textile</button>
+    <button>ICT</button>
+    <button>Pharmaceutical</button>
+    <button>Multi-sectoral</button>
+  </div>
+
+  <!-- PARKS GRID -->
+  <section class="parks-section">
+    <div class="parks-grid">
+
+      <div class="park-card">
+        <div class="park-img">ADAMA</div>
+        <div class="park-body">
+          <h3>Adama</h3>
+          <p>Apparel &amp; Textile Industrial Park</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+      <div class="park-card">
+        <div class="park-img">AIV</div>
+        <div class="park-body">
+          <h3>Addis Industry Village</h3>
+          <p>Multi-sectoral Industrial Village</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+      <div class="park-card">
+        <div class="park-img">ARERTI</div>
+        <div class="park-body">
+          <h3>Arerti</h3>
+          <p>Apparel &amp; Textile Industrial Park</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+      <div class="park-card">
+        <div class="park-img">BAHIR-DAR</div>
+        <div class="park-body">
+          <h3>Bahir-Dar</h3>
+          <p>Apparel &amp; Textile Industrial Park</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+      <div class="park-card">
+        <div class="park-img">BOLE LEMI</div>
+        <div class="park-body">
+          <h3>Bole Lemi</h3>
+          <p>Apparel &amp; Textile Industrial Park</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+      <div class="park-card">
+        <div class="park-img">DEBRE BIRHAN</div>
+        <div class="park-body">
+          <h3>Debre Birhan</h3>
+          <p>Apparel &amp; Textile Industrial Park</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+      <div class="park-card">
+        <div class="park-img">DIRE DAWA</div>
+        <div class="park-body">
+          <h3>Dire Dawa</h3>
+          <p>Multi-sectoral Industrial Park</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+      <div class="park-card">
+        <div class="park-img">HAWASSA</div>
+        <div class="park-body">
+          <h3>Hawassa</h3>
+          <p>Apparel &amp; Textile Industrial Park</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+      <div class="park-card">
+        <div class="park-img">JIMMA</div>
+        <div class="park-body">
+          <h3>Jimma</h3>
+          <p>Multi-sectoral Industrial Park</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+      <div class="park-card">
+        <div class="park-img">KILINTO</div>
+        <div class="park-body">
+          <h3>Kilinto</h3>
+          <p>Pharmaceutical Industrial Park</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+      <div class="park-card">
+        <div class="park-img">KOMBOLCHA</div>
+        <div class="park-body">
+          <h3>Kombolcha</h3>
+          <p>Multi-sectoral Industrial Park</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+      <div class="park-card">
+        <div class="park-img">MEKELLE</div>
+        <div class="park-body">
+          <h3>Mekelle</h3>
+          <p>Apparel &amp; Textile Industrial Park</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+      <div class="park-card">
+        <div class="park-img">SEMERA</div>
+        <div class="park-body">
+          <h3>Semera</h3>
+          <p>Multi-sectoral Industrial Park</p>
+          <a href="#" class="btn">Take a Look</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Industrial Parks Development Corporation (IPDC) — <a href="https://www.ipdc.gov.et" target="_blank">www.ipdc.gov.et</a>
+  </footer>
+
+</body>
+</html>

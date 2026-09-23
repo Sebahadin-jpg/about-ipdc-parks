@@ -1,0 +1,37 @@
+# ===== OS Files =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Editor / IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===== Logs =====
+*.log
+npm-debug.log*
+
+# ===== Dependencies (if you add npm later) =====
+node_modules/
+package-lock.json
+
+# ===== Build / Dist =====
+dist/
+build/
+*.min.css
+*.min.js
+
+# ===== Environment / Secrets =====
+.env
+.env.local
+*.key
+secrets.txt
+
+# ===== Temporary =====
+tmp/
+temp/
+*.bak
+*.tmp
