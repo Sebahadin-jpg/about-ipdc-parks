@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Abdi's Change1 -->
 
-  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Parks - IPDC</title>
+  <!-- Sebaha change  -->
   <style>
-      :root {
+    :root {
       --dark-green: #0d3b2e;
       --mid-green: #14523f;
       --accent-green: #1f7a5a;
@@ -17,8 +19,13 @@
       --text-light: #eaf5ef;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-/* this is Abdi's second commit */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* this is Abdi's second commit */
     body {
       font-family: 'Segoe UI', Tahoma, sans-serif;
       background: #f4faf6;
@@ -34,14 +41,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
+
     header .logo {
       font-size: 22px;
       font-weight: bold;
       letter-spacing: 1px;
     }
-    header .logo span { color: var(--gold); }
+
+    header .logo span {
+      color: var(--gold);
+    }
 
     nav a {
       color: var(--text-light);
@@ -50,8 +61,12 @@
       font-size: 15px;
       transition: color 0.3s;
     }
-    nav a:hover { color: var(--gold); }
 
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    /* This is ABdi's third comment */
     /* ===== HERO ===== */
     .hero {
       background: linear-gradient(135deg, var(--dark-green), var(--accent-green));
@@ -59,11 +74,13 @@
       text-align: center;
       padding: 60px 20px;
     }
+
     .hero h1 {
       font-size: 42px;
       margin-bottom: 10px;
       letter-spacing: 1px;
     }
+
     .hero p {
       font-size: 18px;
       opacity: 0.9;
@@ -78,11 +95,15 @@
       font-size: 14px;
       color: var(--mid-green);
     }
+
     .breadcrumb a {
       color: var(--mid-green);
       text-decoration: none;
     }
-    .breadcrumb a:hover { text-decoration: underline; }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
 
     /* ===== FILTER TABS ===== */
     .filters {
@@ -90,6 +111,7 @@
       padding: 25px 20px 10px;
       background: white;
     }
+
     .filters button {
       background: transparent;
       border: 2px solid var(--mid-green);
@@ -101,6 +123,7 @@
       font-size: 14px;
       transition: all 0.3s;
     }
+
     .filters button:hover,
     .filters button.active {
       background: var(--dark-green);
@@ -114,6 +137,7 @@
       max-width: 1300px;
       margin: 0 auto;
     }
+
     .parks-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -128,6 +152,7 @@
       transition: transform 0.3s, box-shadow 0.3s;
       border-top: 5px solid var(--dark-green);
     }
+
     .park-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 10px 25px rgba(13, 59, 46, 0.28);
@@ -150,16 +175,19 @@
       padding: 18px;
       text-align: center;
     }
+
     .park-body h3 {
       color: var(--dark-green);
       font-size: 20px;
       margin-bottom: 8px;
     }
+
     .park-body p {
       font-size: 13px;
       color: #666;
       margin-bottom: 14px;
     }
+
     .park-body .btn {
       display: inline-block;
       background: var(--dark-green);
@@ -170,6 +198,7 @@
       font-size: 14px;
       transition: background 0.3s;
     }
+
     .park-body .btn:hover {
       background: var(--accent-green);
     }
@@ -183,17 +212,35 @@
       margin-top: 40px;
       font-size: 14px;
     }
-    footer a { color: var(--gold); text-decoration: none; }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 600px) {
-      .hero h1 { font-size: 28px; }
-      header { flex-direction: column; gap: 10px; }
-      nav a { margin: 0 8px; font-size: 13px; }
-      .parks-section { padding: 20px; }
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 13px;
+      }
+
+      .parks-section {
+        padding: 20px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -354,8 +401,10 @@
 
   <!-- FOOTER -->
   <footer>
-    &copy; 2025 Industrial Parks Development Corporation (IPDC) — <a href="https://www.ipdc.gov.et" target="_blank">www.ipdc.gov.et</a>
+    &copy; 2025 Industrial Parks Development Corporation (IPDC) — <a href="https://www.ipdc.gov.et"
+      target="_blank">www.ipdc.gov.et</a>
   </footer>
 
 </body>
+
 </html>
